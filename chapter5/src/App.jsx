@@ -4,13 +4,14 @@ import Body from "./component/Body";
 import Footer from "./component/Footer";
 
 function App() {
+  const name = "이연수"
   return (
   <div>
     <Header />
-    <Body />
+    <Body name={name} location={"서울시"}/>
     <Footer />
   </div>
   );
 }
 
-export default App
+export default App;
