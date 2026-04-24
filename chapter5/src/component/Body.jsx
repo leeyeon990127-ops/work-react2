@@ -1,7 +1,6 @@
 import "./Body.css";
 
-function Body(props) {
-    const { name, location } = props;
+function Body({ name, location }) {
     console.log(name, location);
     return (
         <div className="body">
