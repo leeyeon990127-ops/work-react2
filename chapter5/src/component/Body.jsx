@@ -1,10 +1,17 @@
 import "./Body.css";
 
-function Body({ name, location }) {
-    console.log(name, location);
+function Body() {
+function handleOnClick(e) {
+    console.log(e.target.name);
+    }
     return (
-        <div className="body">
-        {name}는 {location}에 거주합니다.   
+    <div className="body">
+        <button name="A버튼" onClick={handleOnClick}>
+         A 버튼
+        </button>
+        <button name="A버튼" onClick={handleOnClick}>
+         B 버튼
+        </button>
         </div>
     );
 }
