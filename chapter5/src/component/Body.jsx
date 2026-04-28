@@ -1,18 +1,33 @@
 import "./Body.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+// function Viewer() {
+//    console.log("viewer component update!");
+    // return <div>Viewer</div>;
+// }
 
 function Body() {
-    console.log("Update!");
-    const [count, setCount] = useState(0);
-    const onIncrease = () => {
-        setCount(count + 1);
+    const [text, setText] = useState("");
+    const textRef = useRef();
+    
+    const handleOnChange = (e) => {
+        setText(e.target.value);
+    };
+
+    const handleOnClick = () => {
+        if (text.length < 5) {
+            textRef.current.focus();
+        } else {
+            alert(text);
+            setText("");
+        }
     };
     return (
         <div>
-            <h2>{count}</h2>
-            <button onClick={onIncrease}>+</button>    
-        
+        <div className="body" />
+            <input ref={textRef} value={text} onChange={handleOnChange} />
+            <button onClick={handleOnClick}>작성완료</button>
         </div>
-    );
+    );    
 }
 export default Body;

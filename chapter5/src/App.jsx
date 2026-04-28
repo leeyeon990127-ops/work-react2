@@ -3,21 +3,9 @@ import Header from "./component/Header";
 import Body from "./component/Body";
 import Footer from "./component/Footer";
 
-function Counter() {
-  let count = 0;
-  return (
-    <div>
-      <p>Counter : {count}</p>
-      <button
-        onClick={() => {
-          count++;
-          console.log(count);
-        }}
-      >
-        Increment
-      </button>  
-    </div>
-  );
+function ChildComp() {
+  return
+    <div> child component</div>;
 }
 
 function App() {
@@ -27,8 +15,11 @@ function App() {
   //   favorList: ["파스타","빵","떡볶이"],
   // }
   return (
-    <div>
-      <Counter />
+    <div className="App">
+      <Header />
+      <Body>
+      </Body>
+      <Footer />
     </div>
   );
 }
